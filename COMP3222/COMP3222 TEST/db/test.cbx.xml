@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="test">
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|compare:cpm|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_j7j.tdf"/>
-	</PROJECT>
-</LOG_ROOT>
