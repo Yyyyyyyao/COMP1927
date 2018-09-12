@@ -1,0 +1,1150 @@
+TimeQuest Timing Analyzer report for Blackjack
+Thu Oct 26 14:11:38 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Blackjack                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 228.15 MHz ; 228.15 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.383 ; -115.258      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -72.507               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                              ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -3.383 ; cardValue_prev[0] ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.383 ; cardValue_prev[0] ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.420      ;
+; -3.255 ; sync_count[11]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.255 ; sync_count[11]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.291      ;
+; -3.250 ; sync_count[13]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.250 ; sync_count[13]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.288      ;
+; -3.239 ; sync_count[11]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.276      ;
+; -3.239 ; sync_count[11]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.276      ;
+; -3.239 ; sync_count[11]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.276      ;
+; -3.239 ; sync_count[11]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.276      ;
+; -3.239 ; sync_count[11]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.276      ;
+; -3.235 ; sync_count[10]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.235 ; sync_count[10]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.273      ;
+; -3.234 ; sync_count[13]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; 0.001      ; 4.273      ;
+; -3.234 ; sync_count[13]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.273      ;
+; -3.234 ; sync_count[13]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.273      ;
+; -3.234 ; sync_count[13]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.273      ;
+; -3.234 ; sync_count[13]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.273      ;
+; -3.233 ; cardReady_prev    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.233 ; cardReady_prev    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.270      ;
+; -3.219 ; sync_count[10]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; 0.001      ; 4.258      ;
+; -3.219 ; sync_count[10]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.258      ;
+; -3.219 ; sync_count[10]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.258      ;
+; -3.219 ; sync_count[10]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.258      ;
+; -3.219 ; sync_count[10]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.258      ;
+; -3.207 ; sync_count[12]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; sync_count[12]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.245      ;
+; -3.191 ; sync_count[12]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; 0.001      ; 4.230      ;
+; -3.191 ; sync_count[12]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.230      ;
+; -3.191 ; sync_count[12]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.230      ;
+; -3.191 ; sync_count[12]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.230      ;
+; -3.191 ; sync_count[12]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.230      ;
+; -3.045 ; sync_count[8]     ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.045 ; sync_count[8]     ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.081      ;
+; -3.040 ; sync_count[14]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.040 ; sync_count[14]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 4.078      ;
+; -3.029 ; sync_count[8]     ; cardReady_sync    ; clk          ; clk         ; 1.000        ; -0.001     ; 4.066      ;
+; -3.029 ; sync_count[8]     ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.066      ;
+; -3.029 ; sync_count[8]     ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.066      ;
+; -3.029 ; sync_count[8]     ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.066      ;
+; -3.029 ; sync_count[8]     ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.066      ;
+; -3.027 ; sync_count[0]     ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.063      ;
+; -3.027 ; sync_count[0]     ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.063      ;
+; -3.027 ; sync_count[0]     ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.002     ; 4.063      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                        ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                      ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; Blackjack_FSM:BJ_FSM|y.S4                      ; Blackjack_FSM:BJ_FSM|y.S4                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Blackjack_FSM:BJ_FSM|y.S1                      ; Blackjack_FSM:BJ_FSM|y.S1                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Blackjack_FSM:BJ_FSM|y.S2                      ; Blackjack_FSM:BJ_FSM|y.S2                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Blackjack_FSM:BJ_FSM|y.S7                      ; Blackjack_FSM:BJ_FSM|y.S7                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620 ; sync_count[19]                                 ; sync_count[19]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.906      ;
+; 0.624 ; cardValue_prev[1]                              ; cardValue_sync[1]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.628 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.914      ;
+; 0.643 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.929      ;
+; 0.650 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.650 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.670 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.670 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.761 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_FSM:BJ_FSM|y.S3                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.047      ;
+; 0.764 ; cardValue_prev[2]                              ; cardValue_sync[2]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.765 ; cardValue_prev[3]                              ; cardValue_sync[3]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.051      ;
+; 0.771 ; cardValue_prev[0]                              ; cardValue_sync[0]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 0.803 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.089      ;
+; 0.804 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.090      ;
+; 0.809 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.095      ;
+; 0.814 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 0.815 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.850 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; Blackjack_FSM:BJ_FSM|y.S5                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.136      ;
+; 0.869 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.155      ;
+; 0.870 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.156      ;
+; 0.924 ; Blackjack_FSM:BJ_FSM|y.S8                      ; Blackjack_FSM:BJ_FSM|y.S1                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.210      ;
+; 0.955 ; Blackjack_FSM:BJ_FSM|y.S1                      ; Blackjack_FSM:BJ_FSM|y.S2                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.241      ;
+; 0.968 ; sync_count[10]                                 ; sync_count[10]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.972 ; sync_count[1]                                  ; sync_count[1]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.976 ; sync_count[17]                                 ; sync_count[17]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.976 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.979 ; sync_count[3]                                  ; sync_count[3]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.265      ;
+; 0.980 ; sync_count[5]                                  ; sync_count[5]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.266      ;
+; 0.981 ; sync_count[7]                                  ; sync_count[7]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981 ; sync_count[9]                                  ; sync_count[9]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.267      ;
+; 0.985 ; sync_count[8]                                  ; sync_count[8]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 0.995 ; cardReady_prev                                 ; cardReady_sync                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.281      ;
+; 1.001 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.287      ;
+; 1.004 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.290      ;
+; 1.006 ; sync_count[18]                                 ; sync_count[18]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.292      ;
+; 1.006 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_FSM:BJ_FSM|y.S8                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.292      ;
+; 1.013 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.299      ;
+; 1.014 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.014 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.021 ; sync_count[2]                                  ; sync_count[2]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.307      ;
+; 1.022 ; sync_count[4]                                  ; sync_count[4]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.022 ; sync_count[6]                                  ; sync_count[6]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.022 ; sync_count[13]                                 ; sync_count[13]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.023 ; sync_count[15]                                 ; sync_count[15]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.023 ; sync_count[16]                                 ; sync_count[16]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.309      ;
+; 1.025 ; Blackjack_FSM:BJ_FSM|y.S4                      ; Blackjack_FSM:BJ_FSM|y.S5                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.311      ;
+; 1.036 ; Blackjack_FSM:BJ_FSM|y.S2                      ; Blackjack_FSM:BJ_FSM|y.S3                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.322      ;
+; 1.043 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.329      ;
+; 1.048 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.334      ;
+; 1.089 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.375      ;
+; 1.103 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_FSM:BJ_FSM|y.S4                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.389      ;
+; 1.184 ; cardReady_sync                                 ; Blackjack_FSM:BJ_FSM|y.S3                      ; clk          ; clk         ; 0.000        ; -0.005     ; 1.465      ;
+; 1.185 ; cardReady_sync                                 ; Blackjack_FSM:BJ_FSM|y.S2                      ; clk          ; clk         ; 0.000        ; -0.005     ; 1.466      ;
+; 1.186 ; cardReady_sync                                 ; Blackjack_FSM:BJ_FSM|y.S1                      ; clk          ; clk         ; 0.000        ; -0.005     ; 1.467      ;
+; 1.186 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.198 ; sync_count[12]                                 ; sync_count[12]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.207 ; sync_count[0]                                  ; sync_count[0]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.493      ;
+; 1.212 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.234 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.520      ;
+; 1.236 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.522      ;
+; 1.240 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.241 ; sync_count[14]                                 ; sync_count[14]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.527      ;
+; 1.246 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.532      ;
+; 1.246 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.532      ;
+; 1.246 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.532      ;
+; 1.246 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.532      ;
+; 1.246 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.532      ;
+; 1.256 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.542      ;
+; 1.256 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.542      ;
+; 1.256 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.542      ;
+; 1.256 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.542      ;
+; 1.259 ; Blackjack_FSM:BJ_FSM|y.S4                      ; Blackjack_FSM:BJ_FSM|y.S8                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.545      ;
+; 1.282 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.381 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_FSM:BJ_FSM|y.S7                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.667      ;
+; 1.386 ; cardValue_sync[3]                              ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ; clk          ; clk         ; 0.000        ; -0.005     ; 1.667      ;
+; 1.388 ; cardValue_sync[3]                              ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; clk          ; clk         ; 0.000        ; -0.005     ; 1.669      ;
+; 1.391 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_FSM:BJ_FSM|y.S8                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.677      ;
+; 1.408 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.694      ;
+; 1.411 ; sync_count[3]                                  ; sync_count[4]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.697      ;
+; 1.412 ; sync_count[5]                                  ; sync_count[6]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.698      ;
+; 1.413 ; sync_count[7]                                  ; sync_count[8]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.699      ;
+; 1.417 ; sync_count[8]                                  ; sync_count[9]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.703      ;
+; 1.436 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.722      ;
+; 1.436 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.722      ;
+; 1.439 ; sync_count[18]                                 ; sync_count[19]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.725      ;
+; 1.445 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.731      ;
+; 1.448 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.734      ;
+; 1.448 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.734      ;
+; 1.454 ; sync_count[2]                                  ; sync_count[3]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.740      ;
+; 1.455 ; sync_count[4]                                  ; sync_count[5]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.741      ;
+; 1.455 ; sync_count[6]                                  ; sync_count[7]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.741      ;
+; 1.455 ; sync_count[13]                                 ; sync_count[14]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.741      ;
+; 1.456 ; sync_count[16]                                 ; sync_count[17]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.742      ;
+; 1.456 ; sync_count[15]                                 ; sync_count[16]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.742      ;
+; 1.465 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_FSM:BJ_FSM|y.S4                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.751      ;
+; 1.476 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.762      ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S1                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S1                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S2                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S2                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S3                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S3                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S4                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S4                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S5                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S5                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S6                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S6                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S7                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S7                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S8                      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S8                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardReady_prev                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardReady_prev                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardReady_sync                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardReady_sync                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[0]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[0]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[1]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[1]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[2]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[2]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[3]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[3]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[0]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[0]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[1]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[1]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[2]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[2]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[3]                              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[3]                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[0]                                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[0]                                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[10]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[10]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[11]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[11]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[12]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[12]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[13]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[13]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[14]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[14]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[15]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[15]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[16]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[16]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[17]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[17]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[18]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[18]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[19]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[19]                                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sync_count[1]                                  ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; cardReady     ; clk        ; 3.909 ; 3.909 ; Rise       ; clk             ;
+; cardValue[*]  ; clk        ; 3.165 ; 3.165 ; Rise       ; clk             ;
+;  cardValue[0] ; clk        ; 3.165 ; 3.165 ; Rise       ; clk             ;
+;  cardValue[1] ; clk        ; 2.852 ; 2.852 ; Rise       ; clk             ;
+;  cardValue[2] ; clk        ; 2.817 ; 2.817 ; Rise       ; clk             ;
+;  cardValue[3] ; clk        ; 3.096 ; 3.096 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; cardReady     ; clk        ; 0.080 ; 0.080 ; Rise       ; clk             ;
+; cardValue[*]  ; clk        ; 0.787 ; 0.787 ; Rise       ; clk             ;
+;  cardValue[0] ; clk        ; 0.787 ; 0.787 ; Rise       ; clk             ;
+;  cardValue[1] ; clk        ; 0.780 ; 0.780 ; Rise       ; clk             ;
+;  cardValue[2] ; clk        ; 0.785 ; 0.785 ; Rise       ; clk             ;
+;  cardValue[3] ; clk        ; 0.078 ; 0.078 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; finished  ; clk        ; 8.727 ; 8.727 ; Rise       ; clk             ;
+; lost      ; clk        ; 7.163 ; 7.163 ; Rise       ; clk             ;
+; newCard   ; clk        ; 9.153 ; 9.153 ; Rise       ; clk             ;
+; score[*]  ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
+;  score[0] ; clk        ; 6.562 ; 6.562 ; Rise       ; clk             ;
+;  score[1] ; clk        ; 6.865 ; 6.865 ; Rise       ; clk             ;
+;  score[2] ; clk        ; 7.272 ; 7.272 ; Rise       ; clk             ;
+;  score[3] ; clk        ; 7.251 ; 7.251 ; Rise       ; clk             ;
+;  score[4] ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; finished  ; clk        ; 7.647 ; 7.647 ; Rise       ; clk             ;
+; lost      ; clk        ; 7.163 ; 7.163 ; Rise       ; clk             ;
+; newCard   ; clk        ; 7.974 ; 7.974 ; Rise       ; clk             ;
+; score[*]  ; clk        ; 6.562 ; 6.562 ; Rise       ; clk             ;
+;  score[0] ; clk        ; 6.562 ; 6.562 ; Rise       ; clk             ;
+;  score[1] ; clk        ; 6.865 ; 6.865 ; Rise       ; clk             ;
+;  score[2] ; clk        ; 7.272 ; 7.272 ; Rise       ; clk             ;
+;  score[3] ; clk        ; 7.251 ; 7.251 ; Rise       ; clk             ;
+;  score[4] ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.706 ; -17.097       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -59.380               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                              ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -0.706 ; cardValue_prev[0] ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.706 ; cardValue_prev[0] ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.737      ;
+; -0.704 ; sync_count[13]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.704 ; sync_count[13]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.736      ;
+; -0.702 ; sync_count[11]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.702 ; sync_count[11]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.732      ;
+; -0.689 ; sync_count[10]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.689 ; sync_count[10]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.686 ; sync_count[13]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.719      ;
+; -0.686 ; sync_count[13]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.719      ;
+; -0.686 ; sync_count[13]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.719      ;
+; -0.686 ; sync_count[13]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.719      ;
+; -0.686 ; sync_count[13]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.719      ;
+; -0.686 ; sync_count[12]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.686 ; sync_count[12]    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.718      ;
+; -0.684 ; sync_count[11]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.715      ;
+; -0.684 ; sync_count[11]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.715      ;
+; -0.684 ; sync_count[11]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.715      ;
+; -0.684 ; sync_count[11]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.715      ;
+; -0.684 ; sync_count[11]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.715      ;
+; -0.671 ; sync_count[10]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.704      ;
+; -0.671 ; sync_count[10]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.704      ;
+; -0.671 ; sync_count[10]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.704      ;
+; -0.671 ; sync_count[10]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.704      ;
+; -0.671 ; sync_count[10]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.704      ;
+; -0.668 ; sync_count[12]    ; cardReady_sync    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.701      ;
+; -0.668 ; sync_count[12]    ; cardValue_sync[3] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.701      ;
+; -0.668 ; sync_count[12]    ; cardValue_sync[0] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.701      ;
+; -0.668 ; sync_count[12]    ; cardValue_sync[2] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.701      ;
+; -0.668 ; sync_count[12]    ; cardValue_sync[1] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.701      ;
+; -0.655 ; cardReady_prev    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.655 ; cardReady_prev    ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.001     ; 1.686      ;
+; -0.640 ; sync_count[0]     ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[0]     ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[10]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[12]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[13]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[14]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[15]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[16]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[17]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[18]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.640 ; sync_count[8]     ; sync_count[19]    ; clk          ; clk         ; 1.000        ; -0.002     ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[12]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[17]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
+; -0.638 ; sync_count[14]    ; sync_count[18]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.670      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                        ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                      ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Blackjack_FSM:BJ_FSM|y.S4                      ; Blackjack_FSM:BJ_FSM|y.S4                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Blackjack_FSM:BJ_FSM|y.S1                      ; Blackjack_FSM:BJ_FSM|y.S1                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Blackjack_FSM:BJ_FSM|y.S2                      ; Blackjack_FSM:BJ_FSM|y.S2                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Blackjack_FSM:BJ_FSM|y.S7                      ; Blackjack_FSM:BJ_FSM|y.S7                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; sync_count[19]                                 ; sync_count[19]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.242 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; cardValue_prev[1]                              ; cardValue_sync[1]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.251 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.403      ;
+; 0.254 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.406      ;
+; 0.254 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.406      ;
+; 0.267 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.419      ;
+; 0.270 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.422      ;
+; 0.306 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.458      ;
+; 0.311 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.463      ;
+; 0.311 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_FSM:BJ_FSM|y.S3                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.463      ;
+; 0.320 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; Blackjack_FSM:BJ_FSM|y.S5                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.472      ;
+; 0.325 ; cardValue_prev[2]                              ; cardValue_sync[2]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326 ; cardValue_prev[3]                              ; cardValue_sync[3]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.329 ; cardValue_prev[0]                              ; cardValue_sync[0]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.330 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.331 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.348 ; Blackjack_FSM:BJ_FSM|y.S5                      ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.500      ;
+; 0.355 ; sync_count[10]                                 ; sync_count[10]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.360 ; sync_count[1]                                  ; sync_count[1]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.363 ; sync_count[3]                                  ; sync_count[3]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; sync_count[17]                                 ; sync_count[17]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; sync_count[5]                                  ; sync_count[5]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; sync_count[7]                                  ; sync_count[7]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; sync_count[8]                                  ; sync_count[8]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; sync_count[9]                                  ; sync_count[9]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.368 ; sync_count[18]                                 ; sync_count[18]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; Blackjack_FSM:BJ_FSM|y.S8                      ; Blackjack_FSM:BJ_FSM|y.S1                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.370 ; Blackjack_FSM:BJ_FSM|y.S1                      ; Blackjack_FSM:BJ_FSM|y.S2                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.373 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_FSM:BJ_FSM|y.S8                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.376 ; sync_count[2]                                  ; sync_count[2]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; sync_count[13]                                 ; sync_count[13]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; sync_count[4]                                  ; sync_count[4]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; sync_count[6]                                  ; sync_count[6]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; sync_count[15]                                 ; sync_count[15]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; sync_count[16]                                 ; sync_count[16]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.382 ; Blackjack_FSM:BJ_FSM|y.S2                      ; Blackjack_FSM:BJ_FSM|y.S3                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
+; 0.389 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.541      ;
+; 0.392 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.544      ;
+; 0.392 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.544      ;
+; 0.408 ; cardReady_prev                                 ; cardReady_sync                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.560      ;
+; 0.411 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_FSM:BJ_FSM|y.S4                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.563      ;
+; 0.411 ; Blackjack_FSM:BJ_FSM|y.S4                      ; Blackjack_FSM:BJ_FSM|y.S5                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.563      ;
+; 0.434 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.586      ;
+; 0.438 ; sync_count[12]                                 ; sync_count[12]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.590      ;
+; 0.445 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.597      ;
+; 0.446 ; sync_count[0]                                  ; sync_count[0]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.598      ;
+; 0.447 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.599      ;
+; 0.448 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.600      ;
+; 0.448 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.600      ;
+; 0.450 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.602      ;
+; 0.452 ; sync_count[14]                                 ; sync_count[14]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.604      ;
+; 0.470 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.622      ;
+; 0.470 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.622      ;
+; 0.470 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.622      ;
+; 0.471 ; Blackjack_FSM:BJ_FSM|y.S4                      ; Blackjack_FSM:BJ_FSM|y.S8                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.623      ;
+; 0.471 ; Blackjack_FSM:BJ_FSM|y.S6                      ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.623      ;
+; 0.473 ; cardReady_sync                                 ; Blackjack_FSM:BJ_FSM|y.S3                      ; clk          ; clk         ; 0.000        ; -0.004     ; 0.621      ;
+; 0.475 ; cardReady_sync                                 ; Blackjack_FSM:BJ_FSM|y.S2                      ; clk          ; clk         ; 0.000        ; -0.004     ; 0.623      ;
+; 0.476 ; cardReady_sync                                 ; Blackjack_FSM:BJ_FSM|y.S1                      ; clk          ; clk         ; 0.000        ; -0.004     ; 0.624      ;
+; 0.498 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; Blackjack_FSM:BJ_FSM|y.S6                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.501 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.501 ; sync_count[3]                                  ; sync_count[4]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.502 ; sync_count[5]                                  ; sync_count[6]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.654      ;
+; 0.503 ; sync_count[7]                                  ; sync_count[8]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; sync_count[8]                                  ; sync_count[9]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.508 ; sync_count[18]                                 ; sync_count[19]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.660      ;
+; 0.514 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.516 ; sync_count[2]                                  ; sync_count[3]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.517 ; sync_count[13]                                 ; sync_count[14]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518 ; sync_count[16]                                 ; sync_count[17]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; sync_count[4]                                  ; sync_count[5]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; sync_count[6]                                  ; sync_count[7]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; sync_count[15]                                 ; sync_count[16]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.525 ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.677      ;
+; 0.528 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ; Blackjack_FSM:BJ_FSM|y.S8                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
+; 0.528 ; sync_count[10]                                 ; sync_count[12]                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
+; 0.529 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.532 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; cardValue_sync[3]                              ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ; clk          ; clk         ; 0.000        ; -0.004     ; 0.681      ;
+; 0.534 ; cardValue_sync[3]                              ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ; clk          ; clk         ; 0.000        ; -0.004     ; 0.682      ;
+; 0.536 ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ; Blackjack_FSM:BJ_FSM|y.S7                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.536 ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.536 ; sync_count[3]                                  ; sync_count[5]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.537 ; sync_count[5]                                  ; sync_count[7]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.689      ;
+; 0.538 ; Blackjack_FSM:BJ_FSM|y.S3                      ; Blackjack_FSM:BJ_FSM|y.S4                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|C_p:counter_plus|Q[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_A|Q[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_add|Q[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_DataPath:BJ_DP|regn:reg_score|Q[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S1                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S1                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S2                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S2                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S3                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S3                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S4                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S4                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S5                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S5                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S6                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S6                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S7                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S7                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S8                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Blackjack_FSM:BJ_FSM|y.S8                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardReady_prev                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardReady_prev                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardReady_sync                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardReady_sync                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[0]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[0]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[1]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[1]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[2]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[2]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_prev[3]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_prev[3]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[0]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[0]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[1]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[1]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[2]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[2]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cardValue_sync[3]                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cardValue_sync[3]                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[0]                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[0]                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[10]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[10]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[11]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[11]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[12]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[12]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[13]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[13]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[14]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[14]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[15]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[15]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[16]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[16]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[17]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[17]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[18]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[18]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[19]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sync_count[19]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sync_count[1]                                  ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; cardReady     ; clk        ; 0.985 ; 0.985 ; Rise       ; clk             ;
+; cardValue[*]  ; clk        ; 0.704 ; 0.704 ; Rise       ; clk             ;
+;  cardValue[0] ; clk        ; 0.643 ; 0.643 ; Rise       ; clk             ;
+;  cardValue[1] ; clk        ; 0.533 ; 0.533 ; Rise       ; clk             ;
+;  cardValue[2] ; clk        ; 0.528 ; 0.528 ; Rise       ; clk             ;
+;  cardValue[3] ; clk        ; 0.704 ; 0.704 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; cardReady     ; clk        ; 0.551 ; 0.551 ; Rise       ; clk             ;
+; cardValue[*]  ; clk        ; 0.887 ; 0.887 ; Rise       ; clk             ;
+;  cardValue[0] ; clk        ; 0.887 ; 0.887 ; Rise       ; clk             ;
+;  cardValue[1] ; clk        ; 0.883 ; 0.883 ; Rise       ; clk             ;
+;  cardValue[2] ; clk        ; 0.883 ; 0.883 ; Rise       ; clk             ;
+;  cardValue[3] ; clk        ; 0.552 ; 0.552 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; finished  ; clk        ; 4.468 ; 4.468 ; Rise       ; clk             ;
+; lost      ; clk        ; 3.846 ; 3.846 ; Rise       ; clk             ;
+; newCard   ; clk        ; 4.553 ; 4.553 ; Rise       ; clk             ;
+; score[*]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
+;  score[0] ; clk        ; 3.606 ; 3.606 ; Rise       ; clk             ;
+;  score[1] ; clk        ; 3.712 ; 3.712 ; Rise       ; clk             ;
+;  score[2] ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  score[3] ; clk        ; 3.889 ; 3.889 ; Rise       ; clk             ;
+;  score[4] ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; finished  ; clk        ; 4.022 ; 4.022 ; Rise       ; clk             ;
+; lost      ; clk        ; 3.846 ; 3.846 ; Rise       ; clk             ;
+; newCard   ; clk        ; 4.144 ; 4.144 ; Rise       ; clk             ;
+; score[*]  ; clk        ; 3.606 ; 3.606 ; Rise       ; clk             ;
+;  score[0] ; clk        ; 3.606 ; 3.606 ; Rise       ; clk             ;
+;  score[1] ; clk        ; 3.712 ; 3.712 ; Rise       ; clk             ;
+;  score[2] ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  score[3] ; clk        ; 3.889 ; 3.889 ; Rise       ; clk             ;
+;  score[4] ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.383   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -3.383   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -115.258 ; 0.0   ; 0.0      ; 0.0     ; -72.507             ;
+;  clk             ; -115.258 ; 0.000 ; N/A      ; N/A     ; -72.507             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; cardReady     ; clk        ; 3.909 ; 3.909 ; Rise       ; clk             ;
+; cardValue[*]  ; clk        ; 3.165 ; 3.165 ; Rise       ; clk             ;
+;  cardValue[0] ; clk        ; 3.165 ; 3.165 ; Rise       ; clk             ;
+;  cardValue[1] ; clk        ; 2.852 ; 2.852 ; Rise       ; clk             ;
+;  cardValue[2] ; clk        ; 2.817 ; 2.817 ; Rise       ; clk             ;
+;  cardValue[3] ; clk        ; 3.096 ; 3.096 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; cardReady     ; clk        ; 0.551 ; 0.551 ; Rise       ; clk             ;
+; cardValue[*]  ; clk        ; 0.887 ; 0.887 ; Rise       ; clk             ;
+;  cardValue[0] ; clk        ; 0.887 ; 0.887 ; Rise       ; clk             ;
+;  cardValue[1] ; clk        ; 0.883 ; 0.883 ; Rise       ; clk             ;
+;  cardValue[2] ; clk        ; 0.883 ; 0.883 ; Rise       ; clk             ;
+;  cardValue[3] ; clk        ; 0.552 ; 0.552 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; finished  ; clk        ; 8.727 ; 8.727 ; Rise       ; clk             ;
+; lost      ; clk        ; 7.163 ; 7.163 ; Rise       ; clk             ;
+; newCard   ; clk        ; 9.153 ; 9.153 ; Rise       ; clk             ;
+; score[*]  ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
+;  score[0] ; clk        ; 6.562 ; 6.562 ; Rise       ; clk             ;
+;  score[1] ; clk        ; 6.865 ; 6.865 ; Rise       ; clk             ;
+;  score[2] ; clk        ; 7.272 ; 7.272 ; Rise       ; clk             ;
+;  score[3] ; clk        ; 7.251 ; 7.251 ; Rise       ; clk             ;
+;  score[4] ; clk        ; 7.414 ; 7.414 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; finished  ; clk        ; 4.022 ; 4.022 ; Rise       ; clk             ;
+; lost      ; clk        ; 3.846 ; 3.846 ; Rise       ; clk             ;
+; newCard   ; clk        ; 4.144 ; 4.144 ; Rise       ; clk             ;
+; score[*]  ; clk        ; 3.606 ; 3.606 ; Rise       ; clk             ;
+;  score[0] ; clk        ; 3.606 ; 3.606 ; Rise       ; clk             ;
+;  score[1] ; clk        ; 3.712 ; 3.712 ; Rise       ; clk             ;
+;  score[2] ; clk        ; 3.894 ; 3.894 ; Rise       ; clk             ;
+;  score[3] ; clk        ; 3.889 ; 3.889 ; Rise       ; clk             ;
+;  score[4] ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1123     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1123     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 163   ; 163  ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 20    ; 20   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Oct 26 14:11:22 2017
+Info: Command: quartus_sta Blackjack -c Blackjack
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Blackjack.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.383
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.383      -115.258 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -72.507 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.706
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.706       -17.097 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -59.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 426 megabytes
+    Info: Processing ended: Thu Oct 26 14:11:38 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:08
+
+

@@ -1,0 +1,34 @@
+----------------------------------------------------------------------------------
+-- Company: UNSW
+-- Engineer: Jorgen Peddersen
+-- 
+-- Create Date:    16:06:48 09/26/2006 
+-- Design Name:    Blackjack Player
+-- Module Name:    Blackjack Datapath - Structural 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Blackjack_DataPath is
+  
+  port (
+    clk                       : in  std_logic;
+    rst                       : in  std_logic;
+    cardValue                 : in  std_logic_vector(3 downto 0);
+    score                     : out std_logic_vector(4 downto 0);
+    sel                       : in  std_logic;
+    enaLoad, enaAdd, enaScore : in  std_logic;
+    cmp11, cmp16, cmp21       : out std_logic);
+
+end Blackjack_DataPath;
+
+architecture Structural of Blackjack_DataPath is
+
+begin  -- Structural
+
+  
+
+end Structural;

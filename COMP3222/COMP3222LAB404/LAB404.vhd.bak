@@ -1,0 +1,51 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+
+ENTITY LAB404 IS
+
+PORT (HEX0: OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
+END LAB404;
+
+ARCHITECTURE Behavior OF LAB404 IS
+
+BEGIN
+
+
+
+
+
+
+
+
+END Behavior;
+
+
+--T_D_gate
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+ENTITY T_D_gate IS
+	PORT ( Clk, T, Clear : IN STD_LOGIC ;
+			 Q : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)) ;
+	END T_D_gate;
+ARCHITECTURE Behavior OF T_D_gate IS
+
+SIGNAL Count: STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+BEGIN
+	PROCESS (Clk,T)
+	BEGIN
+		IF Count = "1111" THEN
+			Count <= "0000";
+			IF Q = "1111" THEN
+				Q <= "0000";
+			ELSE 
+				Q <= Q + 1;
+		ELSE
+			Count <= Count + 1;
+		END IF;
+	END PROCESS;
+END Behavior;

@@ -1,0 +1,30 @@
+|LAB304
+Clk => D_gate:M0.Clk
+Clk => p_D_gate:M1.Clk
+Clk => n_D_gate:M2.Clk
+D => D_gate:M0.D
+D => p_D_gate:M1.D
+D => n_D_gate:M2.D
+Qa <= D_gate:M0.Q
+Qb <= p_D_gate:M1.Q
+Qc <= n_D_gate:M2.Q
+
+
+|LAB304|D_gate:M0
+D => Q$latch.DATAIN
+Clk => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB304|p_D_gate:M1
+D => Q~reg0.DATAIN
+Clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB304|n_D_gate:M2
+D => Q~reg0.DATAIN
+Clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

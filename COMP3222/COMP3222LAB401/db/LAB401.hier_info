@@ -1,0 +1,183 @@
+|LAB401
+SW[0] => T_D_gate:M0.Clear
+SW[0] => T_D_gate:M2.Clear
+SW[0] => T_D_gate:M4.Clear
+SW[0] => T_D_gate:M6.Clear
+SW[0] => T_D_gate:M8.Clear
+SW[0] => T_D_gate:M10.Clear
+SW[0] => T_D_gate:M12.Clear
+SW[0] => T_D_gate:M14.Clear
+SW[1] => V[7].IN1
+SW[1] => T_D_gate:M0.T
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+KEY[0] => T_D_gate:M0.Clk
+KEY[0] => T_D_gate:M2.Clk
+KEY[0] => T_D_gate:M4.Clk
+KEY[0] => T_D_gate:M6.Clk
+KEY[0] => T_D_gate:M8.Clk
+KEY[0] => T_D_gate:M10.Clk
+KEY[0] => T_D_gate:M12.Clk
+KEY[0] => T_D_gate:M14.Clk
+HEX1[0] <= char_7seg:M16.Display[0]
+HEX1[1] <= char_7seg:M16.Display[1]
+HEX1[2] <= char_7seg:M16.Display[2]
+HEX1[3] <= char_7seg:M16.Display[3]
+HEX1[4] <= char_7seg:M16.Display[4]
+HEX1[5] <= char_7seg:M16.Display[5]
+HEX1[6] <= char_7seg:M16.Display[6]
+HEX0[0] <= char_7seg:M15.Display[0]
+HEX0[1] <= char_7seg:M15.Display[1]
+HEX0[2] <= char_7seg:M15.Display[2]
+HEX0[3] <= char_7seg:M15.Display[3]
+HEX0[4] <= char_7seg:M15.Display[4]
+HEX0[5] <= char_7seg:M15.Display[5]
+HEX0[6] <= char_7seg:M15.Display[6]
+
+
+|LAB401|T_D_gate:M0
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M2
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M4
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M6
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M8
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M10
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M12
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|T_D_gate:M14
+Clk => Count.CLK
+T => Count.IN1
+T => Count.ENA
+Clear => Count.ACLR
+Q <= Count.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|char_7seg:M15
+V[0] => Mux0.IN19
+V[0] => Mux1.IN19
+V[0] => Mux2.IN19
+V[0] => Mux3.IN19
+V[0] => Mux4.IN19
+V[0] => Mux5.IN19
+V[0] => Mux6.IN19
+V[1] => Mux0.IN18
+V[1] => Mux1.IN18
+V[1] => Mux2.IN18
+V[1] => Mux3.IN18
+V[1] => Mux4.IN18
+V[1] => Mux5.IN18
+V[1] => Mux6.IN18
+V[2] => Mux0.IN17
+V[2] => Mux1.IN17
+V[2] => Mux2.IN17
+V[2] => Mux3.IN17
+V[2] => Mux4.IN17
+V[2] => Mux5.IN17
+V[2] => Mux6.IN17
+V[3] => Mux0.IN16
+V[3] => Mux1.IN16
+V[3] => Mux2.IN16
+V[3] => Mux3.IN16
+V[3] => Mux4.IN16
+V[3] => Mux5.IN16
+V[3] => Mux6.IN16
+Display[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Display[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Display[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Display[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Display[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB401|char_7seg:M16
+V[0] => Mux0.IN19
+V[0] => Mux1.IN19
+V[0] => Mux2.IN19
+V[0] => Mux3.IN19
+V[0] => Mux4.IN19
+V[0] => Mux5.IN19
+V[0] => Mux6.IN19
+V[1] => Mux0.IN18
+V[1] => Mux1.IN18
+V[1] => Mux2.IN18
+V[1] => Mux3.IN18
+V[1] => Mux4.IN18
+V[1] => Mux5.IN18
+V[1] => Mux6.IN18
+V[2] => Mux0.IN17
+V[2] => Mux1.IN17
+V[2] => Mux2.IN17
+V[2] => Mux3.IN17
+V[2] => Mux4.IN17
+V[2] => Mux5.IN17
+V[2] => Mux6.IN17
+V[3] => Mux0.IN16
+V[3] => Mux1.IN16
+V[3] => Mux2.IN16
+V[3] => Mux3.IN16
+V[3] => Mux4.IN16
+V[3] => Mux5.IN16
+V[3] => Mux6.IN16
+Display[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Display[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Display[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Display[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Display[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,28 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY LAB303 IS
+
+PORT ( Clk,D: IN STD_LOGIC;
+		 Q : OUT STD_LOGIC);
+END LAB303;
+
+ARCHITECTURE Structural OF LAB303 IS
+
+SIGNAL R_g, S_g, Qma, Qmb, Qsa, Qsb : STD_LOGIC ;
+
+ATTRIBUTE keep : boolean;
+ATTRIBUTE keep of R_g, S_g, Qa, Qb : SIGNAL IS true;
+
+BEGIN
+
+S_g <= NOT(D AND Clk);
+R_g <= NOT(NOT D AND Clk);
+Qa <= NOT(S_g AND Qb);
+Qb <= NOT(Qa AND R_g);
+
+
+Q <= Qa;
+
+
+END Structural;

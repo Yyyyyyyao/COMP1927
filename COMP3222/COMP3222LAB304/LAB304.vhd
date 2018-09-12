@@ -1,0 +1,101 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY LAB304 IS
+
+PORT ( Clk,D: IN STD_LOGIC;
+		 Qa : OUT STD_LOGIC;
+		 Qb : OUT STD_LOGIC;
+		 Qc : OUT STD_LOGIC);
+END LAB304;
+
+ARCHITECTURE Behavior OF LAB304 IS
+	COMPONENT D_gate
+		PORT ( D, Clk : IN STD_LOGIC ;
+			    Q : OUT STD_LOGIC) ;
+	END COMPONENT;
+	
+	COMPONENT p_D_gate
+		PORT ( D, Clk : IN STD_LOGIC ;
+			    Q : OUT STD_LOGIC) ;
+	END COMPONENT;
+	
+	COMPONENT n_D_gate
+		PORT ( D, Clk : IN STD_LOGIC ;
+			    Q : OUT STD_LOGIC) ;
+	END COMPONENT;
+	
+BEGIN
+
+	M0: D_gate PORT MAP (D, Clk, Qa);
+	M1: p_D_gate PORT MAP (D, Clk, Qb);
+	M2: n_D_gate PORT MAP (D, Clk, Qc);
+
+	
+END Behavior;
+
+
+
+--D_gate
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY D_gate IS
+	PORT ( D, Clk : IN STD_LOGIC ;
+			 Q : OUT STD_LOGIC) ;
+	END D_gate;
+ARCHITECTURE Behavior OF D_gate IS
+
+BEGIN
+	PROCESS ( D, Clk )
+	BEGIN
+			IF Clk = '1'THEN
+				Q <= D ;
+			END IF;
+	END PROCESS;
+END Behavior;
+
+
+
+--positive
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY p_D_gate IS
+	PORT ( D, Clk : IN STD_LOGIC ;
+			 Q : OUT STD_LOGIC) ;
+	END p_D_gate;
+ARCHITECTURE Behavior OF p_D_gate IS
+
+BEGIN
+	PROCESS (Clk)
+	BEGIN
+		IF Clk'event AND Clk = '1'THEN
+			Q <= D ;
+		END IF;
+	END PROCESS;
+END Behavior;
+
+
+--negative
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY n_D_gate IS
+	PORT ( D, Clk : IN STD_LOGIC ;
+			 Q : OUT STD_LOGIC) ;
+	END n_D_gate;
+ARCHITECTURE Behavior OF n_D_gate IS
+
+BEGIN
+	PROCESS (Clk)
+	BEGIN
+		IF Clk'event AND Clk = '0'THEN
+			Q <= D ;
+		END IF;
+	END PROCESS;
+END Behavior;
+
+
+
+

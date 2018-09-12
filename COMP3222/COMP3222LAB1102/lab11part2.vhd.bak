@@ -1,0 +1,9 @@
+library ieee.
+use ieee.std_logic_1164.all;
+
+entity lab11part2 is
+end lab11part2;
+
+architecture behaviour of lab11part2 is
+begin
+end behaviour;

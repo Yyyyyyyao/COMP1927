@@ -1,0 +1,91 @@
+|LAB203
+SW[0] => full_adder:step0.y
+SW[0] => LEDR[0].DATAIN
+SW[1] => full_adder:step1.y
+SW[1] => LEDR[1].DATAIN
+SW[2] => full_adder:step2.y
+SW[2] => LEDR[2].DATAIN
+SW[3] => full_adder:step3.y
+SW[3] => LEDR[3].DATAIN
+SW[4] => full_adder:step0.x
+SW[4] => LEDR[4].DATAIN
+SW[5] => full_adder:step1.x
+SW[5] => LEDR[5].DATAIN
+SW[6] => full_adder:step2.x
+SW[6] => LEDR[6].DATAIN
+SW[7] => full_adder:step3.x
+SW[7] => LEDR[7].DATAIN
+SW[8] => full_adder:step0.Cin
+SW[8] => LEDR[8].DATAIN
+LEDR[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= SW[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= SW[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= SW[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= SW[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= SW[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= SW[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= SW[8].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[0] <= full_adder:step0.s
+LEDG[1] <= full_adder:step1.s
+LEDG[2] <= full_adder:step2.s
+LEDG[3] <= full_adder:step3.s
+LEDG[4] <= full_adder:step3.Cout
+
+
+|LAB203|full_adder:step0
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB203|full_adder:step1
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB203|full_adder:step2
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB203|full_adder:step3
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

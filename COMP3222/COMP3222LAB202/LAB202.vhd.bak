@@ -1,0 +1,21 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+
+ENTITY LAB202 IS
+PORT (SW: IN STD_LOGIC(0 TO 3);
+		HEX0: OUT STD_LOGIC_VECTOR(0 TO 6);
+		HEX1: OUT STD_LOGIC_VECTOR(0 TO 6));
+END LAB202;
+
+ARCHITECTURE Behavior OF LAB202 IS
+signal V : STD_LOGIC_VECTOR(0 TO 3);
+BEGIN
+	HEX0(0) <= (V(1) AND NOT(V(3))) OR (V(0) AND V(2)) OR (NOT(V(0)) AND NOT(V(2))) OR (NOT(V(1)) AND V(3));
+	HEX0(1) <= NOT(V(2)) OR (NOT(V(0)) AND V(3)) OR (NOT(V(1)) AND V(3)) OR (NOT(V(0)) AND NOT(V(1))) OR (V(0) AND V(1) AND V(2) AND NOT(V(3)));
+	HEX0(2) <= V(0) OR (NOT(V(1)) AND NOT(V(3))) OR (NOT(V(2)) AND V(3)) OR (V(1) AND V(3)) OR (V(1) AND V(2));
+	HEX0(3) <= (NOT(V(0)) AND NOT(V(2))) OR (NOT(V(1)) AND V(3) OR (V(1) AND NOT(V(2)) AND NOT(V3)) 
+	HEX0(4) <= NOT((NOT(c1) AND NOT(c0)) OR (c0 AND NOT(c1)));
+	HEX0(5) <= NOT(NOT(c1) AND c0);
+	HEX0(6) <= NOT((NOT(c1) AND NOT(c0)) OR (c0 AND NOT(c1)));
+END Behavior;
