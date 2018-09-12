@@ -1,0 +1,39 @@
+
+Input   Initial   Has		Number		Avg Time	Avg Time
+Size    Order     Duplicates	of runs		for usel	for sort
+5000	random	  no		10		0.636sec	0.0036sec
+5000	sorted	  no		10		0.0044sec	0.0028sec
+5000	reverse	  no		10		0.004sec	0.002sec
+5000	random	  yes		10		0.644sec	0.004sec
+5000	sorted	  yes		10		0.004sec	0.0032sec
+5000	reverse	  yes		10		0.004sec	0.0032sec
+10000	random	  no		10		0.2488sec	0.0084sec
+10000	sorted	  no		10		0.0048sec	0.0068sec
+10000	reverse	  no		10		0.004sec	0.0072sec
+10000	random	  yes		10		0.274sec	0.012sec
+10000	sorted	  yes		10		0.0048sec	0.0064sec
+10000	reverse	  yes		10		0.0052sec	0.0076sec
+
+
+Explaining :
+
+1. Considering the same input and the conditions for duplicates; the average time for random is always greater than the average time for sorted and reverse.
+   This may because when the input numbers are random, computer will take more times to compare numbers one by one till the last one; 
+   therefore, it takes more time.
+
+2. Considering the same input and the conditions for duplicates; the average time for sorted and reverse are almost the same.
+   This may because when the input numbers are already sorted in increment or in decrement, computer only need to compare the numbers from 
+   the begining to the number that it needs; and then, it will not need to compare the number behind. Therefore, the average time for it is
+   almost the same;
+
+3. Considering the same conditions except the Input Size; the average time for larger Input Size is greater that for smaller Input Size.
+   This may because when the Input Size is larger, the number that computer need to compare will increase. Therefore, it will take more time.
+
+4. Considering the same conditions except thr Duplicates; the average time for having duplicates are almose the same as the time for not having 
+   duplicates.
+   This may because when the duplicates do not affect the efficiency of computing.
+
+5. Only considering usel and sort, the average time for usel is greater than that for sort in most cases.
+   This may because sort is more efficient than usel(not very sure).
+ 
+

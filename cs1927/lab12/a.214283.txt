@@ -1,0 +1,23 @@
+Reading words from stdin
+Hash Table Stats:
+Number of slots = 214283
+Number of items = 857144
+Chain length distribution
+  Length  #Chains
+       0      4009
+       1     15882
+       2     31261
+       3     41714
+       4     41667
+       5     33736
+       6     22244
+       7     12672
+       8      6444
+       9      2867
+      10      1180
+      11       424
+      12       136
+      13        30
+      14        14
+      15         3
+Testing completed OK

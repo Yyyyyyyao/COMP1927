@@ -1,0 +1,7 @@
+Write your functions in the list.c file.
+
+Write a function deleteEven(link l), that takes in a linked list and returns a pointer to the first element in the list with all nodes which contain even numbers deleted from that list.
+0 -> 4 -> 1 -> 6 -> 2 -> 9 -> X would be 1 -> 9 -> X after calling deleteEven(link l)
+
+Write your test cases in testList.c and compile with:
+gcc -Wall -Werror -o prac testlist.c list.c

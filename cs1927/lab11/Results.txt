@@ -1,0 +1,47 @@
+Results for Tests on 5000 values
+
+Depth = depth of tree, Cost = average #comparisons per search
+
+
+             Ascending Order        Prefix Order        Random Order
+Insert
+Method       Depth      Cost       Depth      Cost     Depth      Cost
+
+L             5000      3114.4     13         11.7      13        15.9
+
+A             5000      1886.5     2954       1115.1    28        16.3
+
+R             2492      951.5      1774       674.1     27        15.2
+
+B             204       61.9       20         13.6      23        13.0
+
+S             33        23.6       29         23.1      1146      22.7
+
+V             13        11.8       14         12.1      15        11.8
+
+Notes (what the above indicates):
+the cost is propotional to the depth of the tree.
+the larger the depth, the higher cost.
+
+When inserting new values at the leaves. the ascending order has largest cost;
+becauese the node will add on one side and then forming a long tree.
+
+Fro inserting values by randomly choosing between L and A
+worst:  keys inserted in ascending/descending order
+average: keys inserted in random order which is log(N)
+
+Splay Tree's performance is quite good except the depth in Random order.
+Splay tree can optimizing itself. Therefore, in most cased, it can perform pritty good
+Because Splay tree always move the frequently accessed nodes to the root;
+Therefore, sometimes, the height of the tree could be linear. (like in Random)
+the worst case: O(n)
+the average case: O(logn)
+  
+
+
+AVL has good performance in all cases.
+because it reblanced itself automatically
+repairs done locally not on the whole tree
+the complexity of it is alwayes log(N)
+ 
+

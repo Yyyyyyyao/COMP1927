@@ -1,0 +1,6 @@
+a.(1)25.  (2)shorter.
+b.Yes
+c../mkwords 2000 | ./word - 1318
+d.a bad hash will cause wide range length.
+e.use faster hash(), 
+f.improve has and search function.

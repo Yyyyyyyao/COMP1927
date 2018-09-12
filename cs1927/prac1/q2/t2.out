@@ -1,0 +1,179 @@
+keybit: a
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c0a8
+sibling: 0x9d3c1c8
+keybit: d
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c258
+sibling: 0x9d3c528
+keybit: k
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c5b8
+sibling: 0x9d3c918
+keybit: r
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c9a8
+sibling: (nil)
+keybit: s
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3ca38
+sibling: (nil)
+keybit: t
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3cac8
+sibling: (nil)
+keybit: u
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3cb58
+sibling: (nil)
+keybit: v
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3cbe8
+sibling: (nil)
+keybit: w
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3cc78
+sibling: (nil)
+keybit: x
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3cd08
+sibling: (nil)
+keybit: y
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3cd98
+sibling: (nil)
+keybit: z
+finish: 1
+data: 
+->  rstuvwxyz
+->  This is key 3
+child: (nil)
+sibling: (nil)
+rstuvwxyz
+keybit: l
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c648
+sibling: (nil)
+keybit: m
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c6d8
+sibling: (nil)
+keybit: n
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c768
+sibling: (nil)
+keybit: o
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c7f8
+sibling: (nil)
+keybit: p
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c888
+sibling: (nil)
+keybit: q
+finish: 1
+data: 
+->  klmnopq
+->  This is key 2
+child: (nil)
+sibling: (nil)
+klmnopq
+keybit: e
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c2e8
+sibling: (nil)
+keybit: f
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c378
+sibling: (nil)
+keybit: g
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c408
+sibling: (nil)
+keybit: h
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c498
+sibling: (nil)
+keybit: i
+finish: 1
+data: 
+->  defghi
+->  This is key 1
+child: (nil)
+sibling: (nil)
+defghi
+keybit: b
+finish: 0
+data: 
+->  
+->  
+child: 0x9d3c138
+sibling: (nil)
+keybit: c
+finish: 1
+data: 
+->  abc
+->  This is key 0
+child: (nil)
+sibling: (nil)
+abc
